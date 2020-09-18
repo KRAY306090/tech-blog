@@ -1,17 +1,17 @@
-<ol class="post-list">
+<div class="container mt-3">
     {{#each posts as |post|}}
-    <li>
-        <article class="post">
-            <div class="title">
-                <a href="/post/{{post.id}}">{{post.title}}</a>
+    <div class="card bg-light mt-3">
+        <div class="post card-body">
+            <div class="title card-title">
+                <a class="text-dark" href="/post/{{post.id}}">{{post.title}}</a>
             </div>
-            <div class="meta">
+            <div class="meta card-text">
                 Created by {{post.user.username}} on
                 {{post.created_at}}
                 |
-                <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+                <a class="card-link" href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
             </div>
-        </article>
-    </li>
+        </div>
+    </div>
     {{/each}}
-</ol>
+</div>
