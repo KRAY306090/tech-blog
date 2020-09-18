@@ -1,41 +1,42 @@
-<section>
-    <h2>Create New Post</h2>
+<div class="container">
+    <section>
+        <h2>Create New Post</h2>
 
-    <form class="new-post-form">
+        <form class="new-post-form">
+            <div>
+                <label for="post-title">Title</label>
+                <input type="text" id="post-title" name="post-title" />
+            </div>
+            <div>
+                <textarea id="post-text" name="comment-body"></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-dark">Create</button>
+        </form>
+    </section>
+
+    {{#if posts.length}}
+    <section>
+        <h2>Your Posts</h2>
         <div>
-            <label for="post-title">Title</label>
-            <input type="text" id="post-title" name="post-title" />
-        </div>
-        <div>
-            <textarea id="post-text" name="comment-body"></textarea>
-        </div>
-        <button type="submit" class="btn">Create</button>
-    </form>
-</section>
-{{#if posts.length}}
-<section>
-    <h2>Your Posts</h2>
-    <ol>
-        {{#each posts as |post|}}
-        <li>
-            <article class="post">
-                <div class="title">
-                    <a href="/post/{{post.id}}">{{post.title}}</a>
+            {{#each posts as |post|}}
+            <div class="card bg-light my-2">
+                <div class="post card-body">
+                    <div class="title card-title">
+                        <a class="text-dark" href="/post/{{post.id}}">{{post.title}}</a>
+                    </div>
+                    <p class="card-text">{{post.post_text}}</p>
+                    <div class="meta card-text text-muted">
+                        Created by {{post.user.username}} on
+                        {{post.created_at}}
+                        |
+                        <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+                    </div>
                 </div>
-                <div class="meta">
-                    <p></p>
-                    <p>{{post.post_text}}</p>
-                    <p></p>
-                    Created by {{post.user.username}} on
-                    {{post.created_at}}
-                    |
-                    <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-                </div>
-            </article>
-            {{!-- <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a> --}}
-        </li>
-        {{/each}}
-    </ol>
-</section>
+                {{!-- <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a> --}}
+            </div>
+            {{/each}}
+        </div>
+    </section>
+</div>
 {{/if}}
 <script src="/javascript/add-post.js"></script>

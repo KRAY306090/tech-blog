@@ -6,29 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="wrapper">
-        <nav class="navbar navbar-light text-dark" style="background-color: #e3f2fd"> 
-                <a class="navbar-brand" href="/">Tech Blog</a>
-                {{#if loggedIn}}
-                <a class="nav-item nav-link text-dark" href="/dashboard">dashboard</a>
-                <button id="logout" class="">logout</button>
-                {{else}}
-                <a class="nav-item nav-link text-dark" href="/login">login</a>
-                <a class="nav-item nav-link text-dark" href="/signup">Sign Up</a>
-                {{/if}}
-            </nav>
+        <nav class="navbar navbar-light text-dark" style="background-color: #e3f2fd">
+            <a class="navbar-brand" href="/">Tech Blog</a>
+            {{#if loggedIn}}
+            <a class="nav-item nav-link text-dark" href="/dashboard">dashboard</a>
+            <button id="logout" class="btn btn-outline-dark">logout</button>
+            {{else}}
+            <a class="nav-item nav-link text-dark" href="/login">login</a>
+            <a class="nav-item nav-link text-dark" href="/signup">Sign Up</a>
+            {{/if}}
+        </nav>
         <main>
             {{{ body }}}
         </main>
-        <footer class="footer" style="background-color: #e3f2fd">
+        {{!-- <footer class="footer" style="background-color: #e3f2fd">
             <div class="container py-4">
                  <span class="text-muted">Made by Kennadee Ray</span>
             </div>
-        </footer>
+        </footer> --}}
     </div>
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
