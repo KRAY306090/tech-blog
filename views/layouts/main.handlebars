@@ -6,31 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="wrapper">
-        <header>
-            <h1>
-                <a href="/">Tech Blog</a>
-            </h1>
-            <nav>
-
+        <nav class="navbar navbar-light text-dark" style="background-color: #e3f2fd"> 
+                <a class="navbar-brand" href="/">Tech Blog</a>
                 {{#if loggedIn}}
-                <a href="/dashboard">dashboard</a>
-                <button id="logout" class="btn-no-style">logout</button>
+                <a class="nav-item nav-link" href="/dashboard">dashboard</a>
+                <button id="logout" class="">logout</button>
                 {{else}}
-                <a href="/login">login</a>
-                <a href="/signup">Sign Up</a>
+                <a class="nav-item nav-link text-dark" href="/login">login</a>
+                <a class="nav-item nav-link text-dark" href="/signup">Sign Up</a>
                 {{/if}}
-
             </nav>
-        </header>
         <main>
             {{{ body }}}
         </main>
-        <footer>
-            Thanks for visiting!
+        <footer class="footer" style="background-color: #e3f2fd">
+            <div class="container py-4">
+                 <span class="text-muted">Made by Kennadee Ray</span>
+            </div>
         </footer>
     </div>
     {{#if loggedIn}}
