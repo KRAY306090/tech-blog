@@ -6,6 +6,6 @@ Tech blog is a social media style application that allows users to share ideas a
 <img src="./screenshots/dashboard.png" alt="dashboard" width="200"/>         <img src="./screenshots/homepage.png" alt="homepage" width="200"/>
 
 ## Installation
-You must run npm install
+MySQL must be installed and running on the local machine to run this application in a local environment. Run `npm install` and create a database using the mysql shell.
 
 
